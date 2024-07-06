@@ -1,0 +1,49 @@
+﻿@model denemproje.Models.Randevu
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Randevu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AdiSoyadi" class="control-label"></label>
+                <input asp-for="AdiSoyadi" class="form-control" />
+                <span asp-validation-for="AdiSoyadi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CepNo" class="control-label"></label>
+                <input asp-for="CepNo" class="form-control" />
+                <span asp-validation-for="CepNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RandevuSaati" class="control-label"></label>
+                <input asp-for="RandevuSaati" class="form-control" />
+                <span asp-validation-for="RandevuSaati" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YapilanIslem" class="control-label"></label>
+                <input asp-for="YapilanIslem" class="form-control" />
+                <span asp-validation-for="YapilanIslem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
