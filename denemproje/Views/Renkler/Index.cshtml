@@ -1,0 +1,33 @@
+﻿@model List<denemproje.Models.Renkler>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+<partial name="_MesajPartial" />
+<a asp-action="Create" class="btn btn-primary">Yeni Kayıt</a>
+<table class="table">
+    <thead>
+        <td>Sıra No</td>
+        <td>Renk Adı</td>
+        <td>Düzeltme</td>
+        <td>Silme</td>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.RenkId</td>
+                <td>@item.RenkAd</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.RenkId" class="btn btn-success">Düzelt</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.RenkId" class="btn btn-danger">Silme</a>
+                </td>
+            </tr>
+        }
+        
+    </tbody>
+</table>

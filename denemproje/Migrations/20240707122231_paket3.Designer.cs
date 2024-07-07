@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using denemproje.Data;
 
@@ -11,9 +12,10 @@ using denemproje.Data;
 namespace denemproje.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240707122231_paket3")]
+    partial class paket3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -87,23 +89,6 @@ namespace denemproje.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Randevus");
-                });
-
-            modelBuilder.Entity("denemproje.Models.Renkler", b =>
-                {
-                    b.Property<int>("RenkId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RenkId"), 1L, 1);
-
-                    b.Property<string>("RenkAd")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("RenkId");
-
-                    b.ToTable("Renklers");
                 });
 #pragma warning restore 612, 618
         }

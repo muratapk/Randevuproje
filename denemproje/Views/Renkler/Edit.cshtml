@@ -1,0 +1,17 @@
+﻿@model denemproje.Models.Renkler
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Düzeltme</h1>
+<form asp-action="Edit">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Renk Adı</label>
+        <input type="text" class="form-control" asp-for="RenkAd" aria-describedby="emailHelp">
+        
+    </div>
+    <input type="hidden" asp-for="RenkId" />
+    <button type="submit" class="btn btn-primary">Düzelt</button>
+</form>
+

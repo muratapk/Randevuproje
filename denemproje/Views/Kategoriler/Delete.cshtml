@@ -1,0 +1,18 @@
+﻿@model denemproje.Models.Kategoriler
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Bu Kaydı Silmek İstiyor musunuz?</h1>
+<form asp-action="Delete">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Kategori Adi</label>
+        <input type="text" readonly class="form-control" asp-for="KategoriAd" aria-describedby="emailHelp">
+        
+    </div>
+    <input type="hidden" asp-for="KategoriId" />
+    <button type="submit" class="btn btn-primary">Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">Vazgeç</a>
+</form>
+

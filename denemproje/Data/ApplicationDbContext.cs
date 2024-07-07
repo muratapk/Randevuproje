@@ -10,6 +10,9 @@ namespace denemproje.Data
         }
         public DbSet<Randevu>? Randevus{ get; set; }
         public DbSet<Admin>? Admins { get; set; }
+        public DbSet<Kategoriler> Kategorilers { get; set;}
+        public DbSet<Renkler> Renklers { get; set; }
+
 
     }
 }
